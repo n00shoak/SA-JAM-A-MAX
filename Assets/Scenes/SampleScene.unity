@@ -513,7 +513,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10308, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -11110,7 +11110,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allWeapons:
-  - {fileID: 11400000, guid: 059ded14b1d1ff3438c278a2a1417734, type: 2}
+  - {fileID: 11400000, guid: ab662176e6d4a124ca86c7c37c0c036e, type: 2}
   availableWeapon: []
   ability: {fileID: 2106629693}
 --- !u!114 &2106629695
@@ -11128,6 +11128,7 @@ MonoBehaviour:
   storage: {fileID: 2106629694}
   coolDowns: []
   currentCoolDowns: []
+  selectedWeapon: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
