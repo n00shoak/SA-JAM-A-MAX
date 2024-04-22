@@ -2,10 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MN_WeaponManager : CL_Manger
+public class MN_WeaponManager : CL_Manager
 {
     [SerializeField] private DT_WeaponStorage storage;
     [SerializeField] private List<float> coolDowns, currentCoolDowns;
+    [SerializeField] public int selectedWeapon ;
 
     private void Start()
     {
@@ -14,20 +15,17 @@ public class MN_WeaponManager : CL_Manger
             coolDowns.Add(storage.availableWeapon[i].coolDown);
             currentCoolDowns.Add(0);
         }
-        Debug.Log(storage.availableWeapon.Count + " counted " + coolDowns[0]);
-
         StartCoroutine(CD(0));
     }
 
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Mouse0) && currentCoolDowns[0] <= 0)
+        if (Input.GetKey(KeyCode.Mouse0) && currentCoolDowns[selectedWeapon] <= 0)
         {
-            currentCoolDowns[0] = coolDowns[0];
-            StartCoroutine(CD(0));
-            Debug.Log("PIOU " + currentCoolDowns[0] + " / " + coolDowns[0]);
-            storage.availableWeapon[0].procedure.Invoke();
+            currentCoolDowns[selectedWeapon] = coolDowns[selectedWeapon];
+            StartCoroutine(CD(selectedWeapon));
+            storage.availableWeapon[selectedWeapon].procedure.Invoke();
         }
     }
 
@@ -40,4 +38,11 @@ public class MN_WeaponManager : CL_Manger
             StartCoroutine(CD(wichCD));
         }
     }
+
+    private IEnumerator autoWeaponChange(int wichCD)
+    {
+        selectedWeapon = Random.Range(0, 3);
+        yield return new WaitForSeconds(10);
+    }
+
 }

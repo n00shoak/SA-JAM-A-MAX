@@ -5,16 +5,17 @@ using UnityEngine;
 public class SY_FoeBehavior : MonoBehaviour
 {
     [SerializeField] private float speed, rotationSpeed;
-    [SerializeField] private Transform target;
+    [SerializeField] private GameObject loot;
+    [SerializeField] public Transform target;
     [SerializeField] private Rigidbody2D rb;
-    [SerializeField] private KeyCode forward = KeyCode.Mouse1;
+    [SerializeField] private int pv = 3;
 
     private void Awake()
     {
         rb = gameObject.GetComponent<Rigidbody2D>();
     }
 
-    public void Update()
+    public void MUpdate()
     {
         rb.AddForce(transform.right * speed);
       
@@ -24,6 +25,20 @@ public class SY_FoeBehavior : MonoBehaviour
 
         // Rotate player towards mouse
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.AngleAxis(angle, Vector3.forward), rotationSpeed * Time.deltaTime);
+    }
+
+    void OnCollisionEnter2D(Collision2D col)
+    {
+        pv--; 
+        if(pv <= 0)
+        {
+            if(Random.Range(0,2) == 1)
+            {
+                Instantiate(loot, transform);
+            }
+
+            Destroy(gameObject);
+        }
     }
 }
 

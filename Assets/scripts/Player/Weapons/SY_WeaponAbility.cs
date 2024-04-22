@@ -16,12 +16,17 @@ public class SY_WeaponAbility : MonoBehaviour
         GameObject bullet = Instantiate(projectileA,transform);
         bullet.transform.parent = null;
         Rigidbody2D bulletRB =  bullet.GetComponent<Rigidbody2D>();
-        bulletRB.velocity = bulletRB.transform.right * 100;
+        bulletRB.velocity =  bulletRB.transform.right * 100;
 
         GameObject bulletb = Instantiate(projectileA, transform.position, transform.rotation * Quaternion.Euler(0, 0, 30));
         bulletb.transform.parent = null;
         Rigidbody2D bulletbRB = bulletb.GetComponent<Rigidbody2D>();
         bulletbRB.velocity = bulletbRB.transform.right * 100;
+
+        GameObject bulletc = Instantiate(projectileA, transform.position, transform.rotation * Quaternion.Euler(0, 0, -30));
+        bulletc.transform.parent = null;
+        Rigidbody2D bulletcRB = bulletc.GetComponent<Rigidbody2D>();
+        bulletcRB.velocity = bulletcRB.transform.right * 100;
     }
 
     public void flameThrower()

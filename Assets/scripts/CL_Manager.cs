@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CL_Manger : MonoBehaviour
+public class CL_Manager : MonoBehaviour
 {
 
 }
