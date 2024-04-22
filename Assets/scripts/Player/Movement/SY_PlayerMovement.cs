@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody2D))]
 public class SY_PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float acceleration;
@@ -18,7 +18,6 @@ public class SY_PlayerMovement : MonoBehaviour
     {
         if (Input.GetKey(forward))
         {
-            Debug.Log("OUE" + transform.right);
             rb.AddForce(transform.right * acceleration);
         }
     }

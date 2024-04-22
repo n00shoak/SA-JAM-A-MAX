@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e40781e6ae7aa43954b024266c38ac, type: 3}
   m_Name: Test
   m_EditorClassIdentifier: 
-  rateOfFire: 0
   range: 0
   MultiShot: 0
+  coolDown: 1
   color: {r: 0, g: 0, b: 0, a: 0}
   Level: 0
   SelectedEfect: 0

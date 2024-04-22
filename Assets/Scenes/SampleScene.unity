@@ -538,6 +538,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2106629690}
+  - component: {fileID: 2106629695}
   - component: {fileID: 2106629694}
   - component: {fileID: 2106629693}
   m_Layer: 0
@@ -575,6 +576,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectileA: {fileID: 4715345735249864648, guid: d63702abcedc42443a215f69f5722e95, type: 3}
+  allAbility:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2106629693}
+        m_TargetAssemblyTypeName: SY_WeaponAbility, Assembly-CSharp
+        m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2106629694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -589,6 +605,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   allWeapons:
   - {fileID: 11400000, guid: 059ded14b1d1ff3438c278a2a1417734, type: 2}
+  availableWeapon: []
+  ability: {fileID: 2106629693}
+--- !u!114 &2106629695
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2106629689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 492fa601362f5884d9eec35409875c12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  storage: {fileID: 2106629694}
+  coolDowns: []
+  currentCoolDowns: []
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
