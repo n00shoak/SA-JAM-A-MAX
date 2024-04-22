@@ -9,12 +9,16 @@ public class MN_WeaponManager : CL_Manger
 
     private void Start()
     {
-        for(int i =0; i< storage.availableWeapon.Count; i++)
+        for (int i = 0; i < storage.availableWeapon.Count; i++)
         {
             coolDowns.Add(storage.availableWeapon[i].coolDown);
+            currentCoolDowns.Add(0);
         }
-        currentCoolDowns = coolDowns;
+        Debug.Log(storage.availableWeapon.Count + " counted " + coolDowns[0]);
+
+        StartCoroutine(CD(0));
     }
+
 
     private void Update()
     {
@@ -22,7 +26,7 @@ public class MN_WeaponManager : CL_Manger
         {
             currentCoolDowns[0] = coolDowns[0];
             StartCoroutine(CD(0));
-            Debug.Log("PIOU");
+            Debug.Log("PIOU " + currentCoolDowns[0] + " / " + coolDowns[0]);
             storage.availableWeapon[0].procedure.Invoke();
         }
     }

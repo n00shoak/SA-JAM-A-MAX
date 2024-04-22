@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SY_BulletScript : MonoBehaviour
 {
+
     void Start()
     {
         StartCoroutine(lifeTime());
@@ -11,7 +12,7 @@ public class SY_BulletScript : MonoBehaviour
 
     IEnumerator lifeTime()
     {
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(0.5f);
         Destroy(gameObject);
     }
 }

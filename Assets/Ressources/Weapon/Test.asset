@@ -14,10 +14,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 0
   MultiShot: 0
-  coolDown: 1
+  coolDown: 0.5
   color: {r: 0, g: 0, b: 0, a: 0}
   Level: 0
   SelectedEfect: 0
   procedure:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: SY_WeaponAbility, Assembly-CSharp
+        m_MethodName: ShootBullet
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

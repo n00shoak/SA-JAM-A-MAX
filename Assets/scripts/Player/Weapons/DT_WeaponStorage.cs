@@ -8,11 +8,12 @@ public class DT_WeaponStorage : MonoBehaviour
     [SerializeField] public List<CL_SO_Weapons> availableWeapon;
     [SerializeField] private SY_WeaponAbility ability;
 
-    private void Start()
+    private void Awake()
     {
         for(int i = 0; i < allWeapons.Length ; i++)
         {
             availableWeapon.Add(new CL_SO_Weapons());
+            availableWeapon[i] = allWeapons[i];
             availableWeapon[i].procedure = ability.allAbility[allWeapons[i].SelectedEfect];
         }
     }
